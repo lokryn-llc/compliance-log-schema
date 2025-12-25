@@ -1,4 +1,4 @@
 version: v2
 plugins:
   - remote: buf.build/protocolbuffers/python
-    out: gen/python
+    out: src/lokryn_compliance_log/v1

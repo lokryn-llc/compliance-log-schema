@@ -21,7 +21,13 @@ One format. Drop-in ready for any logging system. Built for compliance teams to 
 
 ## Installation
 
-### Buf (Recommended)
+### Python (PyPI)
+
+```bash
+pip install lokryn-compliance-log
+```
+
+### Buf (For generating other languages)
 
 Add to your `buf.yaml`:
 
@@ -34,21 +40,7 @@ Then run:
 
 ```bash
 buf mod update
-```
-
-### Generate Python Code
-
-```bash
-buf generate buf.build/lokryn/compliance-log-schema
-```
-
-Or with `buf.gen.yaml`:
-
-```yaml
-version: v2
-plugins:
-  - remote: buf.build/protocolbuffers/python
-    out: gen
+buf generate
 ```
 
 ---
@@ -127,12 +119,12 @@ How sensitive is the data involved?
 
 ---
 
-## LogRequest Message
+## LogEntry Message
 
 The core message structure:
 
 ```protobuf
-message LogRequest {
+message LogEntry {
   EventType event_type   = 1;
   Outcome outcome        = 2;
   Severity severity      = 3;
@@ -154,13 +146,19 @@ message LogRequest {
 ### Python
 
 ```python
-from lokryn.compliance.v1 import log_pb2
+from lokryn_compliance_log import (
+    LogEntry,
+    EVENT_TOOL_INVOCATION,
+    OUTCOME_SUCCESS,
+    SEVERITY_INFO,
+    SENSITIVITY_CONFIDENTIAL,
+)
 
 # Log an MCP tool call
-log = log_pb2.LogRequest(
-    event_type=log_pb2.EVENT_TOOL_INVOCATION,
-    outcome=log_pb2.OUTCOME_SUCCESS,
-    severity=log_pb2.SEVERITY_INFO,
+log = LogEntry(
+    event_type=EVENT_TOOL_INVOCATION,
+    outcome=OUTCOME_SUCCESS,
+    severity=SEVERITY_INFO,
     actor_id="agent-001",
     component="mcp-client",
     environment="production",
@@ -168,7 +166,7 @@ log = log_pb2.LogRequest(
     message="Executed database query tool",
     payload=b'{"query": "SELECT * FROM users", "rows_returned": 42}',
     policy_tags=["SOC2", "data-access"],
-    sensitivity=log_pb2.SENSITIVITY_CONFIDENTIAL,
+    sensitivity=SENSITIVITY_CONFIDENTIAL,
 )
 
 # Serialize
@@ -178,10 +176,18 @@ data = log.SerializeToString()
 ### Logging a Guardrail Check
 
 ```python
-log = log_pb2.LogRequest(
-    event_type=log_pb2.EVENT_GUARDRAIL_CHECK,
-    outcome=log_pb2.OUTCOME_FAILURE_DENIED,
-    severity=log_pb2.SEVERITY_WARNING,
+from lokryn_compliance_log import (
+    LogEntry,
+    EVENT_GUARDRAIL_CHECK,
+    OUTCOME_FAILURE_DENIED,
+    SEVERITY_WARNING,
+    SENSITIVITY_HIGHLY_RESTRICTED,
+)
+
+log = LogEntry(
+    event_type=EVENT_GUARDRAIL_CHECK,
+    outcome=OUTCOME_FAILURE_DENIED,
+    severity=SEVERITY_WARNING,
     actor_id="agent-001",
     component="safety-filter",
     environment="production",
@@ -189,17 +195,25 @@ log = log_pb2.LogRequest(
     message="PII detected in agent output, blocked",
     payload=b'{"rule": "ssn-pattern", "action": "block"}',
     policy_tags=["PII", "HIPAA"],
-    sensitivity=log_pb2.SENSITIVITY_HIGHLY_RESTRICTED,
+    sensitivity=SENSITIVITY_HIGHLY_RESTRICTED,
 )
 ```
 
 ### Logging an Agent Decision
 
 ```python
-log = log_pb2.LogRequest(
-    event_type=log_pb2.EVENT_AGENT_DECISION,
-    outcome=log_pb2.OUTCOME_SUCCESS,
-    severity=log_pb2.SEVERITY_INFO,
+from lokryn_compliance_log import (
+    LogEntry,
+    EVENT_AGENT_DECISION,
+    OUTCOME_SUCCESS,
+    SEVERITY_INFO,
+    SENSITIVITY_INTERNAL,
+)
+
+log = LogEntry(
+    event_type=EVENT_AGENT_DECISION,
+    outcome=OUTCOME_SUCCESS,
+    severity=SEVERITY_INFO,
     actor_id="agent-001",
     component="decision-engine",
     environment="production",
@@ -207,7 +221,7 @@ log = log_pb2.LogRequest(
     message="Agent chose to escalate to human",
     payload=b'{"options": ["respond", "escalate", "defer"], "selected": "escalate", "confidence": 0.92}',
     policy_tags=["audit-trail"],
-    sensitivity=log_pb2.SENSITIVITY_INTERNAL,
+    sensitivity=SENSITIVITY_INTERNAL,
 )
 ```
 
