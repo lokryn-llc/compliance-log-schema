@@ -1,0 +1,199 @@
+{
+  "version": "1.0.0",
+  "target_standard": "elastic-ecs",
+  "target_version": "8.17",
+  "mappings": [
+    {
+      "lokryn_event_type": "EVENT_LOGIN",
+      "lokryn_value": 1,
+      "ecs_event_category": ["authentication"],
+      "ecs_event_type": ["start"]
+    },
+    {
+      "lokryn_event_type": "EVENT_LOGOUT",
+      "lokryn_value": 2,
+      "ecs_event_category": ["authentication"],
+      "ecs_event_type": ["end"]
+    },
+    {
+      "lokryn_event_type": "EVENT_FILE_ACCESS",
+      "lokryn_value": 3,
+      "ecs_event_category": ["file"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_POLICY_CHANGE",
+      "lokryn_value": 4,
+      "ecs_event_category": ["configuration"],
+      "ecs_event_type": ["change"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PRIVILEGE_USE",
+      "lokryn_value": 5,
+      "ecs_event_category": ["iam"],
+      "ecs_event_type": ["admin"]
+    },
+    {
+      "lokryn_event_type": "EVENT_CONFIG_CHANGE",
+      "lokryn_value": 6,
+      "ecs_event_category": ["configuration"],
+      "ecs_event_type": ["change"]
+    },
+    {
+      "lokryn_event_type": "EVENT_DATA_EXPORT",
+      "lokryn_value": 7,
+      "ecs_event_category": ["file"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_NETWORK_CONNECTION",
+      "lokryn_value": 8,
+      "ecs_event_category": ["network"],
+      "ecs_event_type": ["connection"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PROCESS_START",
+      "lokryn_value": 9,
+      "ecs_event_category": ["process"],
+      "ecs_event_type": ["start"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PROCESS_STOP",
+      "lokryn_value": 10,
+      "ecs_event_category": ["process"],
+      "ecs_event_type": ["end"]
+    },
+    {
+      "lokryn_event_type": "EVENT_USER_MANAGEMENT",
+      "lokryn_value": 11,
+      "ecs_event_category": ["iam"],
+      "ecs_event_type": ["user"]
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_ACCESS",
+      "lokryn_value": 12,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TOOL_INVOCATION",
+      "lokryn_value": 20,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MODEL_INFERENCE",
+      "lokryn_value": 21,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_AGENT_DECISION",
+      "lokryn_value": 22,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["info"]
+    },
+    {
+      "lokryn_event_type": "EVENT_DELEGATION",
+      "lokryn_value": 23,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_CONTEXT_ACCESS",
+      "lokryn_value": 24,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PROMPT_EXECUTION",
+      "lokryn_value": 25,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_GUARDRAIL_CHECK",
+      "lokryn_value": 26,
+      "ecs_event_category": ["intrusion_detection"],
+      "ecs_event_type": ["info"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_INITIALIZE",
+      "lokryn_value": 30,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["start"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_INITIALIZED",
+      "lokryn_value": 31,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["start"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_PING",
+      "lokryn_value": 32,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_SHUTDOWN",
+      "lokryn_value": 33,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["end"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TOOL_LIST",
+      "lokryn_value": 34,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_LIST",
+      "lokryn_value": 35,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PROMPT_LIST",
+      "lokryn_value": 36,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_READ",
+      "lokryn_value": 37,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_SAMPLING_REQUEST",
+      "lokryn_value": 38,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_SAMPLING_RESPONSE",
+      "lokryn_value": 39,
+      "ecs_event_category": ["api"],
+      "ecs_event_type": ["access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_CONNECT",
+      "lokryn_value": 40,
+      "ecs_event_category": ["network"],
+      "ecs_event_type": ["start"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_DISCONNECT",
+      "lokryn_value": 41,
+      "ecs_event_category": ["network"],
+      "ecs_event_type": ["end"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_ERROR",
+      "lokryn_value": 42,
+      "ecs_event_category": ["network"],
+      "ecs_event_type": ["error"]
+    }
+  ]
+}

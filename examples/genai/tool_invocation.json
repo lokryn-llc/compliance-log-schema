@@ -1,0 +1,38 @@
+{
+  "event_type": 20,
+  "outcome": 1,
+  "severity": 2,
+  "sensitivity": 2,
+  "ocsf_class_uid": 6003,
+  "ocsf_activity_id": 1,
+  "otel_operation_name": "execute_tool",
+  "time": "2024-01-15T10:30:05.000Z",
+  "duration_ms": 85,
+  "actor_id": "agent-assistant-001",
+  "actor_type": "agent",
+  "component": "tool-executor",
+  "environment": "production",
+  "resource": "tools/database_query",
+  "message": "Executed database query tool successfully",
+  "trace_id": "trace-llm-abc123",
+  "span_id": "span-tool-002",
+  "parent_span_id": "span-llm-001",
+  "session_id": "chat-session-xyz",
+  "policy_tags": ["SOC2", "data-access", "PCI"],
+  "metadata": {
+    "schema_version": "1.0.0",
+    "product_name": "lokryn-tools",
+    "product_version": "2.0.0",
+    "vendor_name": "Lokryn"
+  },
+  "genai": {
+    "tool_calls": [
+      {
+        "id": "call_001",
+        "name": "database_query",
+        "arguments": "{\"query\": \"SELECT id, email FROM users WHERE active = true LIMIT 10\"}",
+        "result": "{\"rows_returned\": 10, \"execution_time_ms\": 45}"
+      }
+    ]
+  }
+}

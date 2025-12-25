@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "target_platform": "microsoft-sentinel",
+  "target_standard": "asim",
+  "mappings": [
+    {
+      "lokryn_field": "time",
+      "target_field": "TimeGenerated",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "outcome",
+      "target_field": "EventResult",
+      "transform": "map",
+      "transform_rules": {
+        "OUTCOME_UNKNOWN": "NA",
+        "OUTCOME_SUCCESS": "Success",
+        "OUTCOME_FAILURE_*": "Failure",
+        "OUTCOME_OTHER": "NA"
+      }
+    },
+    {
+      "lokryn_field": "severity",
+      "target_field": "EventSeverity",
+      "transform": "map",
+      "transform_rules": {
+        "1": "Informational",
+        "2": "Informational",
+        "3": "Informational",
+        "4": "Low",
+        "5": "Medium",
+        "6": "High",
+        "7": "High",
+        "8": "High"
+      }
+    },
+    {
+      "lokryn_field": "message",
+      "target_field": "EventMessage",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "actor_id",
+      "target_field": "ActorUsername",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "actor_type",
+      "target_field": "ActorUserType",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "component",
+      "target_field": "EventProduct",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "resource",
+      "target_field": "TargetUrl",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "client_id",
+      "target_field": "SrcDvcId",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "server_id",
+      "target_field": "DstDvcId",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "trace_id",
+      "target_field": "CorrelationId",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "session_id",
+      "target_field": "SessionId",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "policy_tags",
+      "target_field": "AdditionalFields.policy_tags",
+      "transform": "rename"
+    }
+  ]
+}

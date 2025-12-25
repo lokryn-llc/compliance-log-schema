@@ -1,0 +1,41 @@
+{
+  "event_type": 21,
+  "outcome": 1,
+  "severity": 2,
+  "sensitivity": 2,
+  "ocsf_class_uid": 6003,
+  "ocsf_activity_id": 1,
+  "otel_operation_name": "chat",
+  "time": "2024-01-15T10:30:00.000Z",
+  "duration_ms": 1250,
+  "actor_id": "agent-assistant-001",
+  "actor_type": "agent",
+  "component": "inference-service",
+  "environment": "production",
+  "resource": "models/claude-3-opus",
+  "message": "LLM completion request processed",
+  "trace_id": "trace-llm-abc123",
+  "span_id": "span-llm-001",
+  "parent_span_id": "span-agent-001",
+  "session_id": "chat-session-xyz",
+  "policy_tags": ["SOC2", "data-processing"],
+  "metadata": {
+    "schema_version": "1.0.0",
+    "product_name": "lokryn-inference",
+    "product_version": "3.0.0",
+    "vendor_name": "Lokryn"
+  },
+  "genai": {
+    "model": "claude-3-opus-20240229",
+    "provider": "anthropic",
+    "input_tokens": 1250,
+    "output_tokens": 420,
+    "total_tokens": 1670,
+    "temperature": 0.7,
+    "max_tokens": 4096,
+    "top_p": 0.95,
+    "finish_reason": "end_turn",
+    "time_to_first_token_ms": 180,
+    "response_id": "msg_01XYZ"
+  }
+}

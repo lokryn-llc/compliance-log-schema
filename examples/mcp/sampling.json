@@ -1,0 +1,54 @@
+{
+  "event_type": 38,
+  "outcome": 1,
+  "severity": 2,
+  "sensitivity": 2,
+  "ocsf_class_uid": 6003,
+  "ocsf_activity_id": 1,
+  "otel_operation_name": "chat",
+  "time": "2024-01-15T10:30:15.000Z",
+  "duration_ms": 850,
+  "actor_id": "mcp-server-database",
+  "actor_type": "service",
+  "component": "mcp-server",
+  "environment": "production",
+  "resource": "mcp/sampling",
+  "message": "MCP server requested LLM sampling from client",
+  "trace_id": "trace-mcp-sample-001",
+  "span_id": "span-mcp-sample",
+  "parent_span_id": "span-mcp-tool",
+  "session_id": "mcp-session-abc",
+  "policy_tags": ["SOC2", "mcp", "sampling"],
+  "metadata": {
+    "schema_version": "1.0.0",
+    "product_name": "lokryn-mcp",
+    "product_version": "1.0.0",
+    "vendor_name": "Lokryn"
+  },
+  "mcp": {
+    "protocol_version": "2024-11-05",
+    "request_id": "sample-req-001",
+    "sampling": {
+      "model": "claude-3-haiku-20240307",
+      "provider": "anthropic",
+      "input_tokens": 150,
+      "output_tokens": 75,
+      "total_tokens": 225,
+      "temperature": 0.3,
+      "max_tokens": 256,
+      "finish_reason": "end_turn",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Summarize the query results in one sentence."
+        }
+      ],
+      "output_messages": [
+        {
+          "role": "assistant",
+          "content": "There are currently 42 pending orders in the system."
+        }
+      ]
+    }
+  }
+}

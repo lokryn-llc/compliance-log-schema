@@ -1,0 +1,35 @@
+{
+  "event_type": 26,
+  "outcome": 3,
+  "severity": 4,
+  "sensitivity": 4,
+  "ocsf_class_uid": 5001,
+  "ocsf_activity_id": 1,
+  "time": "2024-01-15T10:30:10.000Z",
+  "duration_ms": 12,
+  "actor_id": "agent-assistant-001",
+  "actor_type": "agent",
+  "component": "guardrail-service",
+  "environment": "production",
+  "resource": "guardrails/pii-detection",
+  "message": "PII detected in agent output, response blocked",
+  "trace_id": "trace-llm-abc123",
+  "span_id": "span-guard-001",
+  "parent_span_id": "span-llm-001",
+  "session_id": "chat-session-xyz",
+  "policy_tags": ["HIPAA", "PII", "guardrail-block"],
+  "metadata": {
+    "schema_version": "1.0.0",
+    "product_name": "lokryn-guardrails",
+    "product_version": "1.2.0",
+    "vendor_name": "Lokryn"
+  },
+  "data": {
+    "guardrail_name": "pii-detection",
+    "guardrail_version": "2.1",
+    "detection_type": "ssn-pattern",
+    "action_taken": "block",
+    "confidence_score": 0.98,
+    "redacted_content": "[SSN REDACTED]"
+  }
+}

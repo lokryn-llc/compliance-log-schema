@@ -1,0 +1,118 @@
+{
+  "version": "1.0.0",
+  "target_standard": "ocsf",
+  "target_version": "1.3.0",
+  "mappings": [
+    {
+      "lokryn_field": "severity",
+      "target_field": "severity_id",
+      "transform": "passthrough",
+      "notes": "Values 1-8 align exactly with OCSF severity_id"
+    },
+    {
+      "lokryn_field": "outcome",
+      "target_field": "status_id",
+      "transform": "prefix_collapse",
+      "transform_rules": {
+        "OUTCOME_UNKNOWN": 0,
+        "OUTCOME_SUCCESS": 1,
+        "OUTCOME_FAILURE_*": 2,
+        "OUTCOME_OTHER": 99
+      },
+      "notes": "Granular failures collapse to single failure status"
+    },
+    {
+      "lokryn_field": "sensitivity",
+      "target_field": "confidentiality_id",
+      "transform": "prefix_collapse",
+      "transform_rules": {
+        "SENSITIVITY_UNKNOWN": 0,
+        "SENSITIVITY_PUBLIC": 1,
+        "SENSITIVITY_PUBLIC_*": 1,
+        "SENSITIVITY_CONFIDENTIAL": 2,
+        "SENSITIVITY_SECRET": 3,
+        "SENSITIVITY_TOP_SECRET": 4
+      },
+      "notes": "Values 0-4 align exactly; PUBLIC_* prefix maps to 1"
+    },
+    {
+      "lokryn_field": "ocsf_class_uid",
+      "target_field": "class_uid",
+      "transform": "rename",
+      "notes": "Pre-translated at write time"
+    },
+    {
+      "lokryn_field": "ocsf_activity_id",
+      "target_field": "activity_id",
+      "transform": "rename",
+      "notes": "Pre-translated at write time"
+    },
+    {
+      "lokryn_field": "time",
+      "target_field": "time",
+      "transform": "passthrough",
+      "notes": "ISO 8601 timestamp"
+    },
+    {
+      "lokryn_field": "trace_id",
+      "target_field": "metadata.correlation_uid",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "message",
+      "target_field": "message",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "actor_id",
+      "target_field": "actor.user.uid",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "actor_type",
+      "target_field": "actor.user.type",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "component",
+      "target_field": "metadata.product.feature.name",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "environment",
+      "target_field": "metadata.product.deployment",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "resource",
+      "target_field": "dst_endpoint.name",
+      "transform": "rename",
+      "notes": "Resource being accessed"
+    },
+    {
+      "lokryn_field": "session_id",
+      "target_field": "session.uid",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "metadata.product_name",
+      "target_field": "metadata.product.name",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "metadata.product_version",
+      "target_field": "metadata.product.version",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "metadata.vendor_name",
+      "target_field": "metadata.product.vendor_name",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "metadata.schema_version",
+      "target_field": "metadata.version",
+      "transform": "rename"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "version": "1.0.0",
+  "target_standard": "elastic-ecs",
+  "target_version": "8.17",
+  "mappings": [
+    {
+      "lokryn_field": "time",
+      "target_field": "@timestamp",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "severity",
+      "target_field": "event.severity",
+      "transform": "passthrough",
+      "notes": "Values 1-8"
+    },
+    {
+      "lokryn_field": "outcome",
+      "target_field": "event.outcome",
+      "transform": "map",
+      "transform_rules": {
+        "OUTCOME_UNKNOWN": "unknown",
+        "OUTCOME_SUCCESS": "success",
+        "OUTCOME_FAILURE_*": "failure",
+        "OUTCOME_OTHER": "unknown"
+      }
+    },
+    {
+      "lokryn_field": "message",
+      "target_field": "message",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "trace_id",
+      "target_field": "trace.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "span_id",
+      "target_field": "span.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "parent_span_id",
+      "target_field": "parent.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "actor_id",
+      "target_field": "user.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "actor_type",
+      "target_field": "user.roles",
+      "transform": "wrap_array",
+      "notes": "ECS expects array"
+    },
+    {
+      "lokryn_field": "component",
+      "target_field": "service.name",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "environment",
+      "target_field": "service.environment",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "resource",
+      "target_field": "url.path",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "session_id",
+      "target_field": "session.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "duration_ms",
+      "target_field": "event.duration",
+      "transform": "multiply",
+      "transform_value": 1000000,
+      "notes": "ECS uses nanoseconds"
+    },
+    {
+      "lokryn_field": "client_id",
+      "target_field": "client.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "server_id",
+      "target_field": "server.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "geo_region",
+      "target_field": "client.geo.region_name",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "policy_tags",
+      "target_field": "tags",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "metadata.product_name",
+      "target_field": "agent.name",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "metadata.product_version",
+      "target_field": "agent.version",
+      "transform": "rename"
+    }
+  ]
+}

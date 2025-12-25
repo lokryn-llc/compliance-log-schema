@@ -1,13 +1,28 @@
 """Compliance-grade audit logging schema for SOC2, HIPAA, and PCI environments."""
 
+from lokryn_compliance_log.mappings import (
+    EVENT_TYPE_MAPPINGS,
+    get_mapping,
+    get_ocsf_values,
+    get_otel_operation_name,
+    get_ocsf_status_id,
+    get_ocsf_confidentiality_id,
+)
 from lokryn_compliance_log.v1.logentry_pb2 import (
-    LogEntry,
+    # Messages
+    LogRequest,
+    Metadata,
+    GenAIPayload,
+    MCPPayload,
+    Message,
+    ToolCall,
+    # Enums
     EventType,
     Outcome,
     Severity,
     Sensitivity,
-    # EventType values
-    EVENT_TYPE_UNSPECIFIED,
+    # EventType values - Traditional (1-12)
+    EVENT_UNSPECIFIED,
     EVENT_LOGIN,
     EVENT_LOGOUT,
     EVENT_FILE_ACCESS,
@@ -20,6 +35,7 @@ from lokryn_compliance_log.v1.logentry_pb2 import (
     EVENT_PROCESS_STOP,
     EVENT_USER_MANAGEMENT,
     EVENT_RESOURCE_ACCESS,
+    # EventType values - AI/Agent (20-26)
     EVENT_TOOL_INVOCATION,
     EVENT_MODEL_INFERENCE,
     EVENT_AGENT_DECISION,
@@ -27,15 +43,29 @@ from lokryn_compliance_log.v1.logentry_pb2 import (
     EVENT_CONTEXT_ACCESS,
     EVENT_PROMPT_EXECUTION,
     EVENT_GUARDRAIL_CHECK,
+    # EventType values - MCP (30-42)
+    EVENT_MCP_INITIALIZE,
+    EVENT_MCP_INITIALIZED,
+    EVENT_MCP_PING,
+    EVENT_MCP_SHUTDOWN,
+    EVENT_TOOL_LIST,
+    EVENT_RESOURCE_LIST,
+    EVENT_PROMPT_LIST,
+    EVENT_RESOURCE_READ,
+    EVENT_SAMPLING_REQUEST,
+    EVENT_SAMPLING_RESPONSE,
+    EVENT_TRANSPORT_CONNECT,
+    EVENT_TRANSPORT_DISCONNECT,
+    EVENT_TRANSPORT_ERROR,
     # Outcome values
-    OUTCOME_UNSPECIFIED,
+    OUTCOME_UNKNOWN,
     OUTCOME_SUCCESS,
     OUTCOME_FAILURE_UNAUTHORIZED,
     OUTCOME_FAILURE_DENIED,
     OUTCOME_FAILURE_ERROR,
-    OUTCOME_PARTIAL,
+    OUTCOME_OTHER,
     # Severity values
-    SEVERITY_UNSPECIFIED,
+    SEVERITY_UNKNOWN,
     SEVERITY_DEBUG,
     SEVERITY_INFO,
     SEVERITY_NOTICE,
@@ -45,22 +75,36 @@ from lokryn_compliance_log.v1.logentry_pb2 import (
     SEVERITY_ALERT,
     SEVERITY_EMERGENCY,
     # Sensitivity values
-    SENSITIVITY_UNSPECIFIED,
+    SENSITIVITY_UNKNOWN,
     SENSITIVITY_PUBLIC,
-    SENSITIVITY_INTERNAL,
     SENSITIVITY_CONFIDENTIAL,
-    SENSITIVITY_RESTRICTED,
-    SENSITIVITY_HIGHLY_RESTRICTED,
+    SENSITIVITY_SECRET,
+    SENSITIVITY_TOP_SECRET,
+    SENSITIVITY_PUBLIC_INTERNAL,
 )
 
 __all__ = [
-    "LogEntry",
+    # Mappings
+    "EVENT_TYPE_MAPPINGS",
+    "get_mapping",
+    "get_ocsf_values",
+    "get_otel_operation_name",
+    "get_ocsf_status_id",
+    "get_ocsf_confidentiality_id",
+    # Messages
+    "LogRequest",
+    "Metadata",
+    "GenAIPayload",
+    "MCPPayload",
+    "Message",
+    "ToolCall",
+    # Enums
     "EventType",
     "Outcome",
     "Severity",
     "Sensitivity",
-    # EventType values
-    "EVENT_TYPE_UNSPECIFIED",
+    # EventType values - Traditional
+    "EVENT_UNSPECIFIED",
     "EVENT_LOGIN",
     "EVENT_LOGOUT",
     "EVENT_FILE_ACCESS",
@@ -73,6 +117,7 @@ __all__ = [
     "EVENT_PROCESS_STOP",
     "EVENT_USER_MANAGEMENT",
     "EVENT_RESOURCE_ACCESS",
+    # EventType values - AI/Agent
     "EVENT_TOOL_INVOCATION",
     "EVENT_MODEL_INFERENCE",
     "EVENT_AGENT_DECISION",
@@ -80,15 +125,29 @@ __all__ = [
     "EVENT_CONTEXT_ACCESS",
     "EVENT_PROMPT_EXECUTION",
     "EVENT_GUARDRAIL_CHECK",
+    # EventType values - MCP
+    "EVENT_MCP_INITIALIZE",
+    "EVENT_MCP_INITIALIZED",
+    "EVENT_MCP_PING",
+    "EVENT_MCP_SHUTDOWN",
+    "EVENT_TOOL_LIST",
+    "EVENT_RESOURCE_LIST",
+    "EVENT_PROMPT_LIST",
+    "EVENT_RESOURCE_READ",
+    "EVENT_SAMPLING_REQUEST",
+    "EVENT_SAMPLING_RESPONSE",
+    "EVENT_TRANSPORT_CONNECT",
+    "EVENT_TRANSPORT_DISCONNECT",
+    "EVENT_TRANSPORT_ERROR",
     # Outcome values
-    "OUTCOME_UNSPECIFIED",
+    "OUTCOME_UNKNOWN",
     "OUTCOME_SUCCESS",
     "OUTCOME_FAILURE_UNAUTHORIZED",
     "OUTCOME_FAILURE_DENIED",
     "OUTCOME_FAILURE_ERROR",
-    "OUTCOME_PARTIAL",
+    "OUTCOME_OTHER",
     # Severity values
-    "SEVERITY_UNSPECIFIED",
+    "SEVERITY_UNKNOWN",
     "SEVERITY_DEBUG",
     "SEVERITY_INFO",
     "SEVERITY_NOTICE",
@@ -98,10 +157,10 @@ __all__ = [
     "SEVERITY_ALERT",
     "SEVERITY_EMERGENCY",
     # Sensitivity values
-    "SENSITIVITY_UNSPECIFIED",
+    "SENSITIVITY_UNKNOWN",
     "SENSITIVITY_PUBLIC",
-    "SENSITIVITY_INTERNAL",
     "SENSITIVITY_CONFIDENTIAL",
-    "SENSITIVITY_RESTRICTED",
-    "SENSITIVITY_HIGHLY_RESTRICTED",
+    "SENSITIVITY_SECRET",
+    "SENSITIVITY_TOP_SECRET",
+    "SENSITIVITY_PUBLIC_INTERNAL",
 ]

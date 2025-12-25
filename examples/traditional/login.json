@@ -1,0 +1,28 @@
+{
+  "event_type": 1,
+  "outcome": 1,
+  "severity": 2,
+  "sensitivity": 2,
+  "ocsf_class_uid": 3002,
+  "ocsf_activity_id": 1,
+  "time": "2024-01-15T10:30:00.000Z",
+  "actor_id": "user-12345",
+  "actor_type": "user",
+  "component": "auth-service",
+  "environment": "production",
+  "resource": "auth/login",
+  "message": "User login successful",
+  "trace_id": "abc123def456ghi789",
+  "span_id": "span-001",
+  "session_id": "sess-xyz789",
+  "policy_tags": ["SOC2", "authentication"],
+  "metadata": {
+    "schema_version": "1.0.0",
+    "product_name": "lokryn-auth",
+    "product_version": "2.1.0",
+    "vendor_name": "Lokryn"
+  },
+  "client_id": "web-client-001",
+  "client_version": "1.0.0",
+  "geo_region": "us-west-2"
+}

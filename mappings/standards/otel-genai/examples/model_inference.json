@@ -1,0 +1,63 @@
+{
+  "description": "LLM model inference event",
+  "lokryn": {
+    "event_type": 21,
+    "outcome": 1,
+    "severity": 2,
+    "sensitivity": 2,
+    "ocsf_class_uid": 6003,
+    "ocsf_activity_id": 1,
+    "otel_operation_name": "chat",
+    "time": "2024-01-15T10:30:00Z",
+    "duration_ms": 1250,
+    "actor_id": "agent-001",
+    "actor_type": "agent",
+    "component": "inference-service",
+    "environment": "production",
+    "resource": "models/claude-3-opus",
+    "message": "LLM completion request",
+    "trace_id": "trace-abc123",
+    "span_id": "span-def456",
+    "session_id": "sess-789",
+    "genai": {
+      "model": "claude-3-opus-20240229",
+      "provider": "anthropic",
+      "input_tokens": 150,
+      "output_tokens": 420,
+      "total_tokens": 570,
+      "temperature": 0.7,
+      "max_tokens": 1024,
+      "top_p": 0.95,
+      "finish_reason": "end_turn",
+      "time_to_first_token_ms": 180,
+      "response_id": "msg_abc123"
+    }
+  },
+  "otel": {
+    "trace_id": "trace-abc123",
+    "span_id": "span-def456",
+    "name": "chat claude-3-opus-20240229",
+    "kind": "CLIENT",
+    "status": {
+      "code": "OK"
+    },
+    "attributes": {
+      "gen_ai.operation.name": "chat",
+      "gen_ai.system": "anthropic",
+      "gen_ai.request.model": "claude-3-opus-20240229",
+      "gen_ai.request.temperature": 0.7,
+      "gen_ai.request.max_tokens": 1024,
+      "gen_ai.request.top_p": 0.95,
+      "gen_ai.usage.input_tokens": 150,
+      "gen_ai.usage.output_tokens": 420,
+      "gen_ai.response.id": "msg_abc123",
+      "gen_ai.response.finish_reasons": ["end_turn"],
+      "gen_ai.server.time_to_first_token": 180,
+      "service.name": "inference-service",
+      "deployment.environment": "production",
+      "user.id": "agent-001",
+      "session.id": "sess-789"
+    },
+    "duration_ms": 1250
+  }
+}

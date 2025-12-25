@@ -1,0 +1,41 @@
+{
+  "event_type": 20,
+  "outcome": 1,
+  "severity": 2,
+  "sensitivity": 2,
+  "ocsf_class_uid": 6003,
+  "ocsf_activity_id": 1,
+  "otel_operation_name": "execute_tool",
+  "time": "2024-01-15T10:30:05.000Z",
+  "duration_ms": 95,
+  "actor_id": "agent-assistant-001",
+  "actor_type": "agent",
+  "component": "mcp-client",
+  "environment": "production",
+  "resource": "mcp/servers/database-server/tools/query",
+  "message": "MCP tool call: database query executed",
+  "trace_id": "trace-mcp-tool-001",
+  "span_id": "span-mcp-tool",
+  "parent_span_id": "span-agent-decision",
+  "session_id": "mcp-session-abc",
+  "policy_tags": ["SOC2", "data-access", "mcp"],
+  "metadata": {
+    "schema_version": "1.0.0",
+    "product_name": "lokryn-mcp",
+    "product_version": "1.0.0",
+    "vendor_name": "Lokryn"
+  },
+  "mcp": {
+    "protocol_version": "2024-11-05",
+    "request_id": "tool-req-002",
+    "tool_name": "query",
+    "tool_arguments": {
+      "sql": "SELECT COUNT(*) FROM orders WHERE status = 'pending'",
+      "database": "analytics"
+    },
+    "tool_result": {
+      "count": 42,
+      "execution_time_ms": 23
+    }
+  }
+}

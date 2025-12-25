@@ -1,0 +1,263 @@
+{
+  "version": "1.0.0",
+  "target_standard": "ocsf",
+  "target_version": "1.3.0",
+  "mappings": [
+    {
+      "lokryn_event_type": "EVENT_LOGIN",
+      "lokryn_value": 1,
+      "ocsf_class_uid": 3002,
+      "ocsf_class_name": "Authentication",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Logon"
+    },
+    {
+      "lokryn_event_type": "EVENT_LOGOUT",
+      "lokryn_value": 2,
+      "ocsf_class_uid": 3002,
+      "ocsf_class_name": "Authentication",
+      "ocsf_activity_id": 2,
+      "ocsf_activity_name": "Logoff"
+    },
+    {
+      "lokryn_event_type": "EVENT_FILE_ACCESS",
+      "lokryn_value": 3,
+      "ocsf_class_uid": 4010,
+      "ocsf_class_name": "File Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Read"
+    },
+    {
+      "lokryn_event_type": "EVENT_POLICY_CHANGE",
+      "lokryn_value": 4,
+      "ocsf_class_uid": 5001,
+      "ocsf_class_name": "Security Finding",
+      "ocsf_activity_id": 2,
+      "ocsf_activity_name": "Update"
+    },
+    {
+      "lokryn_event_type": "EVENT_PRIVILEGE_USE",
+      "lokryn_value": 5,
+      "ocsf_class_uid": 3002,
+      "ocsf_class_name": "Authentication",
+      "ocsf_activity_id": 3,
+      "ocsf_activity_name": "Privilege Escalation"
+    },
+    {
+      "lokryn_event_type": "EVENT_CONFIG_CHANGE",
+      "lokryn_value": 6,
+      "ocsf_class_uid": 5002,
+      "ocsf_class_name": "Configuration Change",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_DATA_EXPORT",
+      "lokryn_value": 7,
+      "ocsf_class_uid": 3005,
+      "ocsf_class_name": "Data Access",
+      "ocsf_activity_id": 5,
+      "ocsf_activity_name": "Export"
+    },
+    {
+      "lokryn_event_type": "EVENT_NETWORK_CONNECTION",
+      "lokryn_value": 8,
+      "ocsf_class_uid": 4001,
+      "ocsf_class_name": "Network Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Open"
+    },
+    {
+      "lokryn_event_type": "EVENT_PROCESS_START",
+      "lokryn_value": 9,
+      "ocsf_class_uid": 1007,
+      "ocsf_class_name": "Process Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Launch"
+    },
+    {
+      "lokryn_event_type": "EVENT_PROCESS_STOP",
+      "lokryn_value": 10,
+      "ocsf_class_uid": 1007,
+      "ocsf_class_name": "Process Activity",
+      "ocsf_activity_id": 2,
+      "ocsf_activity_name": "Terminate"
+    },
+    {
+      "lokryn_event_type": "EVENT_USER_MANAGEMENT",
+      "lokryn_value": 11,
+      "ocsf_class_uid": 3001,
+      "ocsf_class_name": "Account Change",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_ACCESS",
+      "lokryn_value": 12,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 3,
+      "ocsf_activity_name": "Read"
+    },
+    {
+      "lokryn_event_type": "EVENT_TOOL_INVOCATION",
+      "lokryn_value": 20,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_MODEL_INFERENCE",
+      "lokryn_value": 21,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_AGENT_DECISION",
+      "lokryn_value": 22,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_DELEGATION",
+      "lokryn_value": 23,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_CONTEXT_ACCESS",
+      "lokryn_value": 24,
+      "ocsf_class_uid": 3005,
+      "ocsf_class_name": "Data Access",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Read"
+    },
+    {
+      "lokryn_event_type": "EVENT_PROMPT_EXECUTION",
+      "lokryn_value": 25,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_GUARDRAIL_CHECK",
+      "lokryn_value": 26,
+      "ocsf_class_uid": 5001,
+      "ocsf_class_name": "Security Finding",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_INITIALIZE",
+      "lokryn_value": 30,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_INITIALIZED",
+      "lokryn_value": 31,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_PING",
+      "lokryn_value": 32,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 3,
+      "ocsf_activity_name": "Read"
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_SHUTDOWN",
+      "lokryn_value": 33,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 4,
+      "ocsf_activity_name": "Delete"
+    },
+    {
+      "lokryn_event_type": "EVENT_TOOL_LIST",
+      "lokryn_value": 34,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 3,
+      "ocsf_activity_name": "Read"
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_LIST",
+      "lokryn_value": 35,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 3,
+      "ocsf_activity_name": "Read"
+    },
+    {
+      "lokryn_event_type": "EVENT_PROMPT_LIST",
+      "lokryn_value": 36,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 3,
+      "ocsf_activity_name": "Read"
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_READ",
+      "lokryn_value": 37,
+      "ocsf_class_uid": 3005,
+      "ocsf_class_name": "Data Access",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Read"
+    },
+    {
+      "lokryn_event_type": "EVENT_SAMPLING_REQUEST",
+      "lokryn_value": 38,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_SAMPLING_RESPONSE",
+      "lokryn_value": 39,
+      "ocsf_class_uid": 6003,
+      "ocsf_class_name": "API Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Create"
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_CONNECT",
+      "lokryn_value": 40,
+      "ocsf_class_uid": 4001,
+      "ocsf_class_name": "Network Activity",
+      "ocsf_activity_id": 1,
+      "ocsf_activity_name": "Open"
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_DISCONNECT",
+      "lokryn_value": 41,
+      "ocsf_class_uid": 4001,
+      "ocsf_class_name": "Network Activity",
+      "ocsf_activity_id": 2,
+      "ocsf_activity_name": "Close"
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_ERROR",
+      "lokryn_value": 42,
+      "ocsf_class_uid": 4001,
+      "ocsf_class_name": "Network Activity",
+      "ocsf_activity_id": 5,
+      "ocsf_activity_name": "Fail"
+    }
+  ]
+}

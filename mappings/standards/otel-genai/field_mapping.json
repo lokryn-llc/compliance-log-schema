@@ -1,0 +1,109 @@
+{
+  "version": "1.0.0",
+  "target_standard": "otel-genai",
+  "target_version": "1.37.0",
+  "mappings": [
+    {
+      "lokryn_field": "otel_operation_name",
+      "target_field": "gen_ai.operation.name",
+      "transform": "rename",
+      "notes": "Pre-translated at write time"
+    },
+    {
+      "lokryn_field": "trace_id",
+      "target_field": "trace_id",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "span_id",
+      "target_field": "span_id",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "parent_span_id",
+      "target_field": "parent_span_id",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "duration_ms",
+      "target_field": "duration_ms",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "genai.model",
+      "target_field": "gen_ai.request.model",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "genai.provider",
+      "target_field": "gen_ai.system",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "genai.input_tokens",
+      "target_field": "gen_ai.usage.input_tokens",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "genai.output_tokens",
+      "target_field": "gen_ai.usage.output_tokens",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "genai.total_tokens",
+      "target_field": "gen_ai.usage.total_tokens",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "genai.temperature",
+      "target_field": "gen_ai.request.temperature",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "genai.max_tokens",
+      "target_field": "gen_ai.request.max_tokens",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "genai.top_p",
+      "target_field": "gen_ai.request.top_p",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "genai.finish_reason",
+      "target_field": "gen_ai.response.finish_reasons",
+      "transform": "rename",
+      "notes": "OTel expects array; wrap single value"
+    },
+    {
+      "lokryn_field": "genai.response_id",
+      "target_field": "gen_ai.response.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "genai.time_to_first_token_ms",
+      "target_field": "gen_ai.server.time_to_first_token",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "component",
+      "target_field": "service.name",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "environment",
+      "target_field": "deployment.environment",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "actor_id",
+      "target_field": "user.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "session_id",
+      "target_field": "session.id",
+      "transform": "rename"
+    }
+  ]
+}

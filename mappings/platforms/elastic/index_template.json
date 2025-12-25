@@ -1,0 +1,122 @@
+{
+  "index_patterns": ["lokryn-logs-*"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 1
+    },
+    "mappings": {
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "message": {
+          "type": "text"
+        },
+        "event": {
+          "properties": {
+            "category": {
+              "type": "keyword"
+            },
+            "type": {
+              "type": "keyword"
+            },
+            "outcome": {
+              "type": "keyword"
+            },
+            "severity": {
+              "type": "integer"
+            },
+            "duration": {
+              "type": "long"
+            }
+          }
+        },
+        "trace": {
+          "properties": {
+            "id": {
+              "type": "keyword"
+            }
+          }
+        },
+        "span": {
+          "properties": {
+            "id": {
+              "type": "keyword"
+            }
+          }
+        },
+        "user": {
+          "properties": {
+            "id": {
+              "type": "keyword"
+            },
+            "roles": {
+              "type": "keyword"
+            }
+          }
+        },
+        "service": {
+          "properties": {
+            "name": {
+              "type": "keyword"
+            },
+            "environment": {
+              "type": "keyword"
+            }
+          }
+        },
+        "url": {
+          "properties": {
+            "path": {
+              "type": "keyword"
+            }
+          }
+        },
+        "tags": {
+          "type": "keyword"
+        },
+        "lokryn": {
+          "properties": {
+            "event_type": {
+              "type": "integer"
+            },
+            "outcome": {
+              "type": "integer"
+            },
+            "sensitivity": {
+              "type": "integer"
+            },
+            "ocsf_class_uid": {
+              "type": "integer"
+            },
+            "ocsf_activity_id": {
+              "type": "integer"
+            },
+            "otel_operation_name": {
+              "type": "keyword"
+            },
+            "genai": {
+              "properties": {
+                "model": {"type": "keyword"},
+                "provider": {"type": "keyword"},
+                "input_tokens": {"type": "integer"},
+                "output_tokens": {"type": "integer"},
+                "total_tokens": {"type": "integer"},
+                "temperature": {"type": "float"},
+                "finish_reason": {"type": "keyword"}
+              }
+            },
+            "mcp": {
+              "properties": {
+                "protocol_version": {"type": "keyword"},
+                "tool_name": {"type": "keyword"},
+                "resource_uri": {"type": "keyword"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

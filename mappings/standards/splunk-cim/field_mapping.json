@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "target_standard": "splunk-cim",
+  "target_version": "6.1",
+  "mappings": [
+    {
+      "lokryn_field": "time",
+      "target_field": "_time",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "severity",
+      "target_field": "severity",
+      "transform": "map",
+      "transform_rules": {
+        "1": "debug",
+        "2": "informational",
+        "3": "informational",
+        "4": "low",
+        "5": "medium",
+        "6": "high",
+        "7": "critical",
+        "8": "critical"
+      }
+    },
+    {
+      "lokryn_field": "outcome",
+      "target_field": "action",
+      "transform": "map",
+      "transform_rules": {
+        "OUTCOME_UNKNOWN": "unknown",
+        "OUTCOME_SUCCESS": "success",
+        "OUTCOME_FAILURE_UNAUTHORIZED": "failure",
+        "OUTCOME_FAILURE_DENIED": "blocked",
+        "OUTCOME_FAILURE_ERROR": "failure",
+        "OUTCOME_OTHER": "unknown"
+      }
+    },
+    {
+      "lokryn_field": "message",
+      "target_field": "signature",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "actor_id",
+      "target_field": "user",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "component",
+      "target_field": "app",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "environment",
+      "target_field": "environment",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "resource",
+      "target_field": "object",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "trace_id",
+      "target_field": "trace_id",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "session_id",
+      "target_field": "session_id",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "duration_ms",
+      "target_field": "duration",
+      "transform": "divide",
+      "transform_value": 1000,
+      "notes": "CIM uses seconds"
+    },
+    {
+      "lokryn_field": "client_id",
+      "target_field": "src",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "server_id",
+      "target_field": "dest",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "policy_tags",
+      "target_field": "tag",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "metadata.product_name",
+      "target_field": "vendor_product",
+      "transform": "rename"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "version": "1.0.0",
+  "target_standard": "otel-genai",
+  "target_version": "1.37.0",
+  "mappings": [
+    {
+      "lokryn_event_type": "EVENT_TOOL_INVOCATION",
+      "lokryn_value": 20,
+      "otel_operation_name": "execute_tool"
+    },
+    {
+      "lokryn_event_type": "EVENT_MODEL_INFERENCE",
+      "lokryn_value": 21,
+      "otel_operation_name": "chat"
+    },
+    {
+      "lokryn_event_type": "EVENT_AGENT_DECISION",
+      "lokryn_value": 22,
+      "otel_operation_name": "invoke_agent"
+    },
+    {
+      "lokryn_event_type": "EVENT_DELEGATION",
+      "lokryn_value": 23,
+      "otel_operation_name": "invoke_agent"
+    },
+    {
+      "lokryn_event_type": "EVENT_CONTEXT_ACCESS",
+      "lokryn_value": 24,
+      "otel_operation_name": "embeddings"
+    },
+    {
+      "lokryn_event_type": "EVENT_PROMPT_EXECUTION",
+      "lokryn_value": 25,
+      "otel_operation_name": "chat"
+    },
+    {
+      "lokryn_event_type": "EVENT_GUARDRAIL_CHECK",
+      "lokryn_value": 26,
+      "otel_operation_name": null,
+      "notes": "No direct OTel GenAI mapping"
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_INITIALIZE",
+      "lokryn_value": 30,
+      "otel_operation_name": "create_agent"
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_INITIALIZED",
+      "lokryn_value": 31,
+      "otel_operation_name": "create_agent"
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_PING",
+      "lokryn_value": 32,
+      "otel_operation_name": null
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_SHUTDOWN",
+      "lokryn_value": 33,
+      "otel_operation_name": null
+    },
+    {
+      "lokryn_event_type": "EVENT_TOOL_LIST",
+      "lokryn_value": 34,
+      "otel_operation_name": null
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_LIST",
+      "lokryn_value": 35,
+      "otel_operation_name": null
+    },
+    {
+      "lokryn_event_type": "EVENT_PROMPT_LIST",
+      "lokryn_value": 36,
+      "otel_operation_name": null
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_READ",
+      "lokryn_value": 37,
+      "otel_operation_name": null
+    },
+    {
+      "lokryn_event_type": "EVENT_SAMPLING_REQUEST",
+      "lokryn_value": 38,
+      "otel_operation_name": "chat"
+    },
+    {
+      "lokryn_event_type": "EVENT_SAMPLING_RESPONSE",
+      "lokryn_value": 39,
+      "otel_operation_name": "chat"
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_CONNECT",
+      "lokryn_value": 40,
+      "otel_operation_name": null
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_DISCONNECT",
+      "lokryn_value": 41,
+      "otel_operation_name": null
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_ERROR",
+      "lokryn_value": 42,
+      "otel_operation_name": null
+    }
+  ],
+  "notes": "Traditional audit events (1-12) have no OTel GenAI mapping as they are not AI/ML operations"
+}

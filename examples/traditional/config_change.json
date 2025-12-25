@@ -1,0 +1,35 @@
+{
+  "event_type": 6,
+  "outcome": 1,
+  "severity": 3,
+  "sensitivity": 3,
+  "ocsf_class_uid": 5002,
+  "ocsf_activity_id": 1,
+  "time": "2024-01-15T14:22:00.000Z",
+  "actor_id": "admin-user-001",
+  "actor_type": "admin",
+  "component": "config-service",
+  "environment": "production",
+  "resource": "config/security/mfa-policy",
+  "message": "MFA policy updated: required for all admin users",
+  "trace_id": "cfg-trace-123",
+  "span_id": "span-cfg-001",
+  "policy_tags": ["SOC2", "PCI", "config-change"],
+  "metadata": {
+    "schema_version": "1.0.0",
+    "product_name": "lokryn-config",
+    "product_version": "1.5.0",
+    "vendor_name": "Lokryn"
+  },
+  "data": {
+    "previous_value": {
+      "mfa_required": false,
+      "mfa_methods": ["sms"]
+    },
+    "new_value": {
+      "mfa_required": true,
+      "mfa_methods": ["totp", "webauthn"]
+    },
+    "change_reason": "Security policy update per SOC2 audit finding"
+  }
+}

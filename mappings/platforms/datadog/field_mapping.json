@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "target_platform": "datadog",
+  "mappings": [
+    {
+      "lokryn_field": "severity",
+      "target_field": "status",
+      "transform": "map",
+      "transform_rules": {
+        "1": "debug",
+        "2": "debug",
+        "3": "info",
+        "4": "info",
+        "5": "warn",
+        "6": "error",
+        "7": "error",
+        "8": "error"
+      }
+    },
+    {
+      "lokryn_field": "message",
+      "target_field": "message",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "component",
+      "target_field": "service",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "environment",
+      "target_field": "env",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "actor_id",
+      "target_field": "usr.id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "trace_id",
+      "target_field": "dd.trace_id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "span_id",
+      "target_field": "dd.span_id",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "resource",
+      "target_field": "resource.name",
+      "transform": "rename"
+    },
+    {
+      "lokryn_field": "policy_tags",
+      "target_field": "tags",
+      "transform": "passthrough"
+    },
+    {
+      "lokryn_field": "duration_ms",
+      "target_field": "duration",
+      "transform": "multiply",
+      "transform_value": 1000000,
+      "notes": "Datadog expects nanoseconds"
+    }
+  ]
+}

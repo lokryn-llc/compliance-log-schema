@@ -1,0 +1,71 @@
+{
+  "description": "AI agent tool invocation event",
+  "lokryn": {
+    "event_type": 20,
+    "outcome": 1,
+    "severity": 2,
+    "sensitivity": 2,
+    "ocsf_class_uid": 6003,
+    "ocsf_activity_id": 1,
+    "otel_operation_name": "execute_tool",
+    "time": "2024-01-15T10:30:00Z",
+    "duration_ms": 150,
+    "actor_id": "agent-001",
+    "actor_type": "agent",
+    "component": "mcp-client",
+    "environment": "production",
+    "resource": "tools/database_query",
+    "message": "Executed database query tool",
+    "trace_id": "trace-abc123",
+    "span_id": "span-def456",
+    "policy_tags": ["SOC2", "data-access"],
+    "mcp": {
+      "protocol_version": "2024-11-05",
+      "request_id": "req-123",
+      "tool_name": "database_query",
+      "tool_arguments": {
+        "query": "SELECT * FROM users LIMIT 10"
+      },
+      "tool_result": {
+        "rows_returned": 10
+      }
+    }
+  },
+  "ocsf": {
+    "class_uid": 6003,
+    "class_name": "API Activity",
+    "activity_id": 1,
+    "activity_name": "Create",
+    "severity_id": 2,
+    "status_id": 1,
+    "status": "Success",
+    "confidentiality_id": 2,
+    "time": "2024-01-15T10:30:00Z",
+    "duration": 150,
+    "message": "Executed database query tool",
+    "actor": {
+      "user": {
+        "uid": "agent-001",
+        "type": "agent"
+      }
+    },
+    "api": {
+      "operation": "database_query",
+      "request": {
+        "uid": "req-123"
+      }
+    },
+    "dst_endpoint": {
+      "name": "tools/database_query"
+    },
+    "metadata": {
+      "correlation_uid": "trace-abc123",
+      "product": {
+        "feature": {
+          "name": "mcp-client"
+        },
+        "deployment": "production"
+      }
+    }
+  }
+}

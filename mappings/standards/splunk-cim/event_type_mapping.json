@@ -1,0 +1,199 @@
+{
+  "version": "1.0.0",
+  "target_standard": "splunk-cim",
+  "target_version": "6.1",
+  "mappings": [
+    {
+      "lokryn_event_type": "EVENT_LOGIN",
+      "lokryn_value": 1,
+      "cim_data_model": "Authentication",
+      "cim_tags": ["authentication"]
+    },
+    {
+      "lokryn_event_type": "EVENT_LOGOUT",
+      "lokryn_value": 2,
+      "cim_data_model": "Authentication",
+      "cim_tags": ["authentication"]
+    },
+    {
+      "lokryn_event_type": "EVENT_FILE_ACCESS",
+      "lokryn_value": 3,
+      "cim_data_model": "Data Access",
+      "cim_tags": ["data", "access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_POLICY_CHANGE",
+      "lokryn_value": 4,
+      "cim_data_model": "Change",
+      "cim_tags": ["change", "audit"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PRIVILEGE_USE",
+      "lokryn_value": 5,
+      "cim_data_model": "Change",
+      "cim_tags": ["change", "account"]
+    },
+    {
+      "lokryn_event_type": "EVENT_CONFIG_CHANGE",
+      "lokryn_value": 6,
+      "cim_data_model": "Change",
+      "cim_tags": ["change", "audit"]
+    },
+    {
+      "lokryn_event_type": "EVENT_DATA_EXPORT",
+      "lokryn_value": 7,
+      "cim_data_model": "Data Access",
+      "cim_tags": ["data", "access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_NETWORK_CONNECTION",
+      "lokryn_value": 8,
+      "cim_data_model": "Network Traffic",
+      "cim_tags": ["network", "communicate"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PROCESS_START",
+      "lokryn_value": 9,
+      "cim_data_model": "Endpoint",
+      "cim_tags": ["process", "report"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PROCESS_STOP",
+      "lokryn_value": 10,
+      "cim_data_model": "Endpoint",
+      "cim_tags": ["process", "report"]
+    },
+    {
+      "lokryn_event_type": "EVENT_USER_MANAGEMENT",
+      "lokryn_value": 11,
+      "cim_data_model": "Change",
+      "cim_tags": ["change", "account"]
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_ACCESS",
+      "lokryn_value": 12,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TOOL_INVOCATION",
+      "lokryn_value": 20,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MODEL_INFERENCE",
+      "lokryn_value": 21,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_AGENT_DECISION",
+      "lokryn_value": 22,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_DELEGATION",
+      "lokryn_value": 23,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_CONTEXT_ACCESS",
+      "lokryn_value": 24,
+      "cim_data_model": "Data Access",
+      "cim_tags": ["data", "access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PROMPT_EXECUTION",
+      "lokryn_value": 25,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_GUARDRAIL_CHECK",
+      "lokryn_value": 26,
+      "cim_data_model": "Intrusion Detection",
+      "cim_tags": ["ids", "attack"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_INITIALIZE",
+      "lokryn_value": 30,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_INITIALIZED",
+      "lokryn_value": 31,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_PING",
+      "lokryn_value": 32,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_MCP_SHUTDOWN",
+      "lokryn_value": 33,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TOOL_LIST",
+      "lokryn_value": 34,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_LIST",
+      "lokryn_value": 35,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_PROMPT_LIST",
+      "lokryn_value": 36,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_RESOURCE_READ",
+      "lokryn_value": 37,
+      "cim_data_model": "Data Access",
+      "cim_tags": ["data", "access"]
+    },
+    {
+      "lokryn_event_type": "EVENT_SAMPLING_REQUEST",
+      "lokryn_value": 38,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_SAMPLING_RESPONSE",
+      "lokryn_value": 39,
+      "cim_data_model": "Web",
+      "cim_tags": ["web"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_CONNECT",
+      "lokryn_value": 40,
+      "cim_data_model": "Network Traffic",
+      "cim_tags": ["network", "communicate"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_DISCONNECT",
+      "lokryn_value": 41,
+      "cim_data_model": "Network Traffic",
+      "cim_tags": ["network", "communicate"]
+    },
+    {
+      "lokryn_event_type": "EVENT_TRANSPORT_ERROR",
+      "lokryn_value": 42,
+      "cim_data_model": "Network Traffic",
+      "cim_tags": ["network", "communicate"]
+    }
+  ]
+}

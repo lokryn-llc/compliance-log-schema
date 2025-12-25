@@ -1,0 +1,33 @@
+{
+  "event_type": 30,
+  "outcome": 1,
+  "severity": 2,
+  "sensitivity": 1,
+  "ocsf_class_uid": 6003,
+  "ocsf_activity_id": 1,
+  "otel_operation_name": "create_agent",
+  "time": "2024-01-15T10:29:55.000Z",
+  "duration_ms": 150,
+  "actor_id": "mcp-client-001",
+  "actor_type": "service",
+  "component": "mcp-client",
+  "environment": "production",
+  "resource": "mcp/servers/database-server",
+  "message": "MCP server initialization successful",
+  "trace_id": "trace-mcp-init-001",
+  "span_id": "span-mcp-init",
+  "session_id": "mcp-session-abc",
+  "policy_tags": ["SOC2", "mcp"],
+  "metadata": {
+    "schema_version": "1.0.0",
+    "product_name": "lokryn-mcp",
+    "product_version": "1.0.0",
+    "vendor_name": "Lokryn"
+  },
+  "mcp": {
+    "protocol_version": "2024-11-05",
+    "request_id": "init-req-001",
+    "client_capabilities": ["tools", "resources", "prompts", "sampling"],
+    "server_capabilities": ["tools", "resources"]
+  }
+}

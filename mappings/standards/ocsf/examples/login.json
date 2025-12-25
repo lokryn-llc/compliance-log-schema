@@ -1,0 +1,53 @@
+{
+  "description": "User login event",
+  "lokryn": {
+    "event_type": 1,
+    "outcome": 1,
+    "severity": 2,
+    "sensitivity": 2,
+    "ocsf_class_uid": 3002,
+    "ocsf_activity_id": 1,
+    "time": "2024-01-15T10:30:00Z",
+    "actor_id": "user-123",
+    "actor_type": "user",
+    "component": "auth-service",
+    "environment": "production",
+    "resource": "auth/login",
+    "message": "User login successful",
+    "trace_id": "abc123def456",
+    "session_id": "sess-789"
+  },
+  "ocsf": {
+    "class_uid": 3002,
+    "class_name": "Authentication",
+    "activity_id": 1,
+    "activity_name": "Logon",
+    "severity_id": 2,
+    "status_id": 1,
+    "status": "Success",
+    "confidentiality_id": 2,
+    "time": "2024-01-15T10:30:00Z",
+    "message": "User login successful",
+    "actor": {
+      "user": {
+        "uid": "user-123",
+        "type": "user"
+      }
+    },
+    "dst_endpoint": {
+      "name": "auth/login"
+    },
+    "session": {
+      "uid": "sess-789"
+    },
+    "metadata": {
+      "correlation_uid": "abc123def456",
+      "product": {
+        "feature": {
+          "name": "auth-service"
+        },
+        "deployment": "production"
+      }
+    }
+  }
+}
