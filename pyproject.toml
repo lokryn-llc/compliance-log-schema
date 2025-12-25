@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lokryn-compliance-log"
-version = "0.1.1"
+version = "0.2.0"
 description = "Protocol Buffers schema for compliance-grade audit logging. Built for SOC2, HIPAA, and PCI environments."
 readme = "README.md"
 license = "Apache-2.0"
