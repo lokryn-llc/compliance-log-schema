@@ -248,13 +248,10 @@ This schema is the foundation for:
 ---
 
 ## License
-
-**AGPL-3.0** - Free to use, modify, and distribute. If you run a modified version as a network service, you must open source your changes.
-
-Full text: https://www.gnu.org/licenses/agpl-3.0.txt
-
-**Commercial License** - Need to use this without AGPL obligations? Contact us at [license@lokryn.com](mailto:license@lokryn.com).
-
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+https://www.apache.org/licenses/LICENSE-2.0.txt
 ---
 
 ## Contributing
